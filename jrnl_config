@@ -1,0 +1,13 @@
+{
+  "default_hour": 9, 
+  "timeformat": "%Y-%m-%d %H:%M", 
+  "linewrap": false, 
+  "encrypt": true, 
+  "editor": "sublime -w", 
+  "default_minute": 0, 
+  "highlight": true, 
+  "journals": {
+    "default": "$HOME/Dropbox/+Note+/jrnl/jrnl"
+  }, 
+  "tagsymbols": "@"
+}
