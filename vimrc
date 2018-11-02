@@ -48,6 +48,7 @@ call vundle#begin("~/.vim/plugins")
     Plugin 'VundleVim/Vundle.vim'
 
     Plugin 'altercation/vim-colors-solarized'
+    Plugin 'ekalinin/Dockerfile.vim'
 
 call vundle#end()
 
