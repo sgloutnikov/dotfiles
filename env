@@ -6,9 +6,16 @@
 HISTSIZE=1000
 SAVEHIST=1000
 
+# GPG2 TTY
+export GPG_TTY=$(tty)
+
 # Go
 GOPATH=$HOME/go
 export PATH="$PATH:$GOPATH/bin"
+
+# SQLite Homebrew first
+SQLITE_HOMEBREW=/usr/local/opt/sqlite/bin
+export PATH="$SQLITE_HOMEBREW:$PATH"
 
 # Spark
 SPARK_HOME=/usr/local/Cellar/apache-spark/2.3.1/libexec

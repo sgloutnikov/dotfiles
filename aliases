@@ -2,6 +2,7 @@
 # Aliases #
 ###########
 alias ll='ls -lah'
+alias b='brew'
 
 # Find text in files (current path and down)
 alias grep-text='grep -rnw . -e $1'
