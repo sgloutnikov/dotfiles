@@ -3,6 +3,7 @@
 " ------------------------------------------------------------
 set nocompatible          " Don't make Vim vi-compatibile.
 syntax enable             " Enable syntax highlighting.
+set clipboard=unnamed     " Access the system clipboard.
 
 filetype plugin indent on " Enable file type detection.
 
