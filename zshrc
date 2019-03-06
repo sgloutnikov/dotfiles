@@ -113,3 +113,7 @@ export SSH_KEY_PATH="~/.ssh/id_ed25519"
 unset LSCOLORS
 export CLICOLOR=1
 export CLICOLOR_FORCE=1
+
+# jEnv Installation
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
