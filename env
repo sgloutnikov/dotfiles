@@ -6,6 +6,12 @@
 HISTSIZE=1000
 SAVEHIST=1000
 
+# Homebrew
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
+# Default editor
+export EDITOR=vim
+
 # GPG2 TTY
 export GPG_TTY=$(tty)
 
