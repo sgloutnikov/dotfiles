@@ -3,8 +3,8 @@
 #################
 
 # History
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=5000
+SAVEHIST=5000
 
 # Homebrew
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
@@ -23,5 +23,8 @@ export PATH="$PATH:$GOPATH/bin"
 SQLITE_HOMEBREW=/usr/local/opt/sqlite/bin
 export PATH="$SQLITE_HOMEBREW:$PATH"
 
+# Scala
+export PATH="/usr/local/opt/scala@2.11/bin:$PATH"
+
 # Spark
-SPARK_HOME=/usr/local/Cellar/apache-spark/2.3.1/libexec
+SPARK_HOME=/usr/local/Cellar/apache-spark/2.4.0/libexec
