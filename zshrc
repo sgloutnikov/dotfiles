@@ -69,6 +69,7 @@ plugins=(
     git
     docker
     kubectl
+    zsh-docker-aliases
 )
 
 source $ZSH/oh-my-zsh.sh
