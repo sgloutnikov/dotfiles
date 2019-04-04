@@ -3,8 +3,8 @@
 #################
 
 # History
-HISTSIZE=5000
-SAVEHIST=5000
+HISTSIZE=10000
+SAVEHIST=10000
 
 # Homebrew
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
@@ -14,6 +14,9 @@ export EDITOR=vim
 
 # GPG2 TTY
 export GPG_TTY=$(tty)
+
+# VMWare
+export PATH=$PATH:"/Applications/VMware Fusion.app/Contents/Library"
 
 # Go
 GOPATH=$HOME/go
