@@ -70,6 +70,7 @@ plugins=(
     docker
     kubectl
     zsh-docker-aliases
+    minikube
 )
 
 source $ZSH/oh-my-zsh.sh
