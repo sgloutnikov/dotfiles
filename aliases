@@ -34,6 +34,7 @@ dkexbash() {
 alias dksh='dkexbash'
 
 # Kubernetes
+alias k='kubectl'
 alias kcgc='kubectl config get-contexts'
 
 # Youtube-dl
