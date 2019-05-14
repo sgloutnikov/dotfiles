@@ -8,6 +8,7 @@ SAVEHIST=10000
 
 # Homebrew
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export HOMEBREW_NO_INSTALL_CLEANUP=1
 
 # Default editor
 export EDITOR=vim
