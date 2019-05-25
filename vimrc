@@ -1,9 +1,12 @@
 " ------------------------------------------------------------
+"
 " | General Settings                                         |
 " ------------------------------------------------------------
 set nocompatible          " Don't make Vim vi-compatibile.
 syntax enable             " Enable syntax highlighting.
 set clipboard=unnamed     " Access the system clipboard.
+set laststatus=2          " Enable statusbar
+set noshowmode            " Don't show mode, status will show
 
 filetype plugin indent on " Enable file type detection.
 
@@ -52,6 +55,7 @@ call vundle#begin("~/.vim/plugins")
     Plugin 'ekalinin/Dockerfile.vim'
     Plugin 'elzr/vim-json'
     Plugin 'tpope/vim-sleuth'
+    Plugin 'itchyny/lightline.vim'
 
 call vundle#end()
 
@@ -60,13 +64,12 @@ filetype plugin indent on
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-
-
 " ------------------------------------------------------------
 " | Color Settings                                           |
 " ------------------------------------------------------------
-set t_Co=256              " Enable full-color support.
 set background=dark       " Use a dark background.
+
+let g:lightline = { 'colorscheme': 'solarized' }
 
 " Set custom configurations for when the
 " Solarized theme is used from Vim's Terminal mode.
@@ -74,6 +77,7 @@ set background=dark       " Use a dark background.
 " http://ethanschoonover.com/solarized/vim-colors-solarized#advanced-configuration
 
 if !has("gui_running")
+    set t_Co=256              " Enable full-color support.
     let g:solarized_contrast = "high"
     let g:solarized_termcolors = 256
     let g:solarized_termtrans = 1
