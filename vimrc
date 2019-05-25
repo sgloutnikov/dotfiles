@@ -56,6 +56,7 @@ call vundle#begin("~/.vim/plugins")
     Plugin 'elzr/vim-json'
     Plugin 'tpope/vim-sleuth'
     Plugin 'itchyny/lightline.vim'
+    Plugin 'scrooloose/nerdtree'
 
 call vundle#end()
 
@@ -86,4 +87,8 @@ endif
 
 colorscheme solarized     " Use custom color scheme.
 
+" ------------------------------------------------------------
+" | Key Mappings                                             |
+" ------------------------------------------------------------
+map <C-o> :NERDTreeToggle<CR>
 
