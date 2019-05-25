@@ -120,3 +120,6 @@ export CLICOLOR_FORCE=1
 # jEnv Installation
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

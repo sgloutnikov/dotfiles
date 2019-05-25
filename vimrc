@@ -57,12 +57,13 @@ call vundle#begin("~/.vim/plugins")
     Plugin 'tpope/vim-sleuth'
     Plugin 'itchyny/lightline.vim'
     Plugin 'scrooloose/nerdtree'
+    Plugin 'junegunn/fzf'
+    Plugin 'junegunn/fzf.vim'
 
 call vundle#end()
 
 " Re-enable file type detection. Disabled for Vundle above.
 filetype plugin indent on    
-
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 " ------------------------------------------------------------
