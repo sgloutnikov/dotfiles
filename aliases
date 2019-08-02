@@ -40,3 +40,5 @@ alias kcgc='kubectl config get-contexts'
 # Youtube-dl
 alias ytdl='youtube-dl --extract-audio --audio-format mp3  --audio-quality 0 $1'
 
+# tmux
+alias t='tmux attach-session || tmux'
