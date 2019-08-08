@@ -4,7 +4,7 @@
 
 # History
 HISTSIZE=10000
-SAVEHIST=10000
+SAVEHIST=50000
 
 # Homebrew
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
