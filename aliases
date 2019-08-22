@@ -37,6 +37,9 @@ alias dksh='dkexbash'
 alias k='kubectl'
 alias kcgc='kubectl config get-contexts'
 
+# Show k8s node utilization
+alias kutil='kubectl get nodes --no-headers | awk '\''{print $1}'\'' | xargs -I {} sh -c '\''echo {} ; kubectl describe node {} | grep Allocated -A 5 | grep -ve Event -ve Allocated -ve percent -ve -- ; echo '\'''
+
 # Youtube-dl
 alias ytdl='youtube-dl --extract-audio --audio-format mp3  --audio-quality 0 $1'
 
