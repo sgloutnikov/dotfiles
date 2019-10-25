@@ -13,6 +13,10 @@ export HOMEBREW_NO_INSTALL_CLEANUP=1
 # Default editor
 export EDITOR=vim
 
+# Enable kube-ps1
+source "/usr/local/Cellar/kube-ps1/0.7.0/share/kube-ps1.sh"
+PROMPT='$(kube_ps1)'$PROMPT
+
 # GPG2 TTY
 export GPG_TTY=$(tty)
 
