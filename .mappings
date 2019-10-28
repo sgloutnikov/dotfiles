@@ -1,0 +1,21 @@
+[general]
+zshrc = "~/.zshrc"
+env = "~/.env"
+aliases = "~/.aliases"
+vimrc = "~/.vimrc"
+tmux.conf = "~/.tmux.conf"
+tldrrc = "~/.tldrrc"
+
+# Git
+gitconfig = "~/.gitconfig"
+gitignore = "~/.gitignore"
+
+
+[macos]
+
+
+[linux]
+
+
+[windows]
+

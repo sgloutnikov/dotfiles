@@ -1,8 +1,9 @@
 # Stefan's dotfiles
 
-## TODO Install Script
+Managed by [dot](https://github.com/ubnt-intrepid/dot)
 
-* Symlink files
+## Extra Steps
+
 * Install vim scripts (VundleVim, .vim/)
-* akarzim/zsh-docker-aliases install custom oh-my-zsh plugin
+* [akarzim/zsh-docker-aliases](https://github.com/akarzim/zsh-docker-aliases) install custom oh-my-zsh plugin
 * Generate .gitconfig.local for personal git data
