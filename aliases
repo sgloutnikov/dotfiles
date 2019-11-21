@@ -4,6 +4,9 @@
 alias ll='ls -lah'
 alias b='brew'
 
+# Python
+alias python=/usr/local/bin/python3
+
 # Find text in files (current path and down)
 alias grep-text='grep -rnw . -e $1'
 
