@@ -5,6 +5,7 @@ aliases = "~/.aliases"
 vimrc = "~/.vimrc"
 tmux.conf = "~/.tmux.conf"
 tldrrc = "~/.tldrrc"
+alacritty.yml = "~/.config/alacritty/alacritty.yml"
 
 # Git
 gitconfig = "~/.gitconfig"
