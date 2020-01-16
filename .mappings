@@ -6,6 +6,7 @@ vimrc = "~/.vimrc"
 tmux.conf = "~/.tmux.conf"
 tldrrc = "~/.tldrrc"
 alacritty.yml = "~/.config/alacritty/alacritty.yml"
+jrnl.yaml = "~/.config/jrnl/jrnl.yaml"
 
 # Git
 gitconfig = "~/.gitconfig"

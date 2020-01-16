@@ -1,0 +1,13 @@
+default_hour: 9
+default_minute: 0
+editor: subl -w
+encrypt: true
+highlight: true
+indent_character: '|'
+journals:
+  default: $HOME/Dropbox/+Note+/jrnl/jrnl
+linewrap: false
+tagsymbols: '@'
+template: false
+timeformat: '%Y-%m-%d %H:%M'
+version: 2.1.1
