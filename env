@@ -15,7 +15,7 @@ export EDITOR=vim
 
 # Python
 # pytest
-export PYTEST_ADDOPT=S"--ff --maxfail=1"
+export PYTEST_ADDOPT="-ff --maxfail=1"
 
 # Enable kube-ps1
 source "/usr/local/Cellar/kube-ps1/0.7.0/share/kube-ps1.sh"
