@@ -41,6 +41,9 @@ alias dksh='dkexbash'
 alias k='kubectl'
 alias kcgc='kubectl config get-contexts'
 
+# Helm
+alias helm2='~/tools/helm/2.11.0/helm'
+
 # Show k8s node utilization
 alias kutil='kubectl get nodes --no-headers | awk '\''{print $1}'\'' | xargs -I {} sh -c '\''echo {} ; kubectl describe node {} | grep Allocated -A 5 | grep -ve Event -ve Allocated -ve percent -ve -- ; echo '\'''
 
