@@ -36,6 +36,7 @@ dkexbash() {
   docker exec -it $1 /bin/bash
 }
 alias dksh='dkexbash'
+alias dm='docker-machine'
 
 # Kubernetes
 alias k='kubectl'
