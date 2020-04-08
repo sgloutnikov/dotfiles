@@ -1,0 +1,70 @@
+###########
+# Aliases #
+###########
+alias ll='ls -lah'
+alias b='brew'
+# Muscle memory alias to use nvim
+alias vim='nvim'
+alias vi='nvim'
+
+# Dotfile management 
+alias dotconf='git --git-dir=$HOME/.dotconf/ --work-tree=$HOME'
+
+# Python
+alias python=python3
+alias pip=pip3
+
+# Find text in files (current path and down)
+alias grep-text='grep -rnw . -e $1'
+
+# Delete .DS_Store files
+alias rm-ds_store='find . -name ".DS_Store" -delete'
+
+# RipGrep
+# Find filenames
+alias rgf='rg --files | rg $1'
+
+# Database
+alias pg-start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias pg-stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+alias mg-start='mongod --config /usr/local/etc/mongod.conf'
+alias influxdb-start='influxd -config /usr/local/etc/influxdb.conf'
+
+# Docker
+
+# Run a bash shell in the specified container.
+dkexbash() {
+  if [ $# -ne 1 ]; then
+    echo "Usage: $funcstack[1] CONTAINER_ID"
+    return 1
+  fi
+
+  docker exec -it $1 /bin/bash
+}
+alias dksh='dkexbash'
+alias dm='docker-machine'
+
+# Kubernetes
+alias k='kubectl'
+alias kcgc='kubectl config get-contexts'
+
+# Helm
+alias helm2='~/tools/helm/2.11.0/helm'
+
+# Show k8s node utilization
+alias kutil='kubectl get nodes --no-headers | awk '\''{print $1}'\'' | xargs -I {} sh -c '\''echo {} ; kubectl describe node {} | grep Allocated -A 5 | grep -ve Event -ve Allocated -ve percent -ve -- ; echo '\'''
+
+# Bitwarden
+# Login and save session env varialbe
+alias bw-unlock='export BW_SESSION="$(bw unlock --raw)"'
+# Copy password of input
+bw_copy_pw() {
+  echo "$(bw get password $1)" | pbcopy
+}
+alias bw-pw='bw_copy_pw'
+
+# Youtube-dl
+alias ytdl='youtube-dl --extract-audio --audio-format mp3  --audio-quality 0 $1'
+
+# tmux
+alias t='tmux attach-session || tmux'
