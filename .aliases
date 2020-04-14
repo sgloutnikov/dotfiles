@@ -2,7 +2,6 @@
 # Aliases #
 ###########
 alias ll='ls -lah'
-alias b='brew'
 # Muscle memory alias to use nvim
 alias vim='nvim'
 alias vi='nvim'
