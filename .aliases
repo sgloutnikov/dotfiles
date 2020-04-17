@@ -9,6 +9,9 @@ alias vi='nvim'
 # Dotfile management 
 alias dotconf='git --git-dir=$HOME/.dotconf/ --work-tree=$HOME'
 
+# tmux
+alias t='tmux attach-session || tmux'
+
 # Python
 alias python=python3
 alias pip=pip3
@@ -65,5 +68,3 @@ alias bw-pw='bw_copy_pw'
 # Youtube-dl
 alias ytdl='youtube-dl --extract-audio --audio-format mp3  --audio-quality 0 $1'
 
-# tmux
-alias t='tmux attach-session || tmux'
