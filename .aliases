@@ -35,15 +35,18 @@ alias influxdb-start='influxd -config /usr/local/etc/influxdb.conf'
 # Docker
 
 # Run a bash shell in the specified container.
-dkexbash() {
+dkexsh() {
   if [ $# -ne 1 ]; then
     echo "Usage: $funcstack[1] CONTAINER_ID"
     return 1
   fi
-
-  docker exec -it $1 /bin/bash
+  
+  if docker exec -it $1 /bin/bash; then :; else
+    echo "/bin/bash not available in container. Trying /bin/sh"
+    docker exec -it $1 /bin/sh
+  fi
 }
-alias dksh='dkexbash'
+alias dksh='dkexsh'
 alias dm='docker-machine'
 
 # Kubernetes

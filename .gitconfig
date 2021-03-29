@@ -72,28 +72,28 @@
 
 [alias]
     # List Aliases
-    la = "!git config -l | grep alias | cut -c 7-"
+    la = !git config -l | grep alias | cut -c 7-
 
     yolo = push -f
     # List Commits
-    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+    ls = log --pretty=format:%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn] --decorate
     # List Commits Showing Changed Files
-    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    ll = log --pretty=format:%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn] --decorate --numstat
     # List One LIne Commits Showing Dates
-    lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+    lds = log --pretty=format:%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn] --decorate --date=short
     # List One Line Commints Showing Relative Dates
-    ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+    ld = log --pretty=format:%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn] --decorate --date=relative
     # Short Log
     le = log --oneline --decorate
     filelog = log -u
     fl = log -u
     # Show Modified Files Last Commit
-    dl = "!git ll -1"
+    dl = !git ll -1
     # Diff Last Commit
     dlc = diff --cached HEAD^
 
     # Find a Filepath in Codebase
-    f = "!git ls-files | grep -i"
+    f = !git ls-files | grep -i
     # Search for a String in Codebase
     grep = grep -Ii
     gr = grep -Ii
@@ -109,3 +109,8 @@
 
 [pull]
 	ff = only
+[url "git@gitlab.com:"]
+	insteadOf = https://gitlab.com
+[filesystem "AdoptOpenJDK|1.8.0_275|/dev/disk1s1"]
+	timestampResolution = 1001 milliseconds
+	minRacyThreshold = 0 nanoseconds
