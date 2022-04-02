@@ -78,6 +78,7 @@ plugins=(
     kubectl
     zsh-docker-aliases
     minikube
+    sdk
 )
 
 source $ZSH/oh-my-zsh.sh
