@@ -32,6 +32,9 @@ alias pg-stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 alias mg-start='mongod --config /usr/local/etc/mongod.conf'
 alias influxdb-start='influxd -config /usr/local/etc/influxdb.conf'
 
+# CHerryTree
+alias ct=cherrytree
+
 ##########
 # Docker #
 ##########
