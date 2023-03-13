@@ -63,6 +63,23 @@ alias dm='docker-machine'
 
 alias k='kubectl'
 alias kcgc='kubectl config get-contexts'
+alias kge='kubectl get events --sort-by='{.lastTimestamp}''
+# Impersonate -admin in Kubie namespace
+kubieKubectlAsAdmin() {
+  KUBENS=$(cat $KUBIE_KUBECONFIG | yq '.contexts[0].context.namespace')
+  kubectl --as $KUBENS-admin $(echo "$@")
+}
+alias ka='kubieKubectlAsAdmin'
+
+########
+# Helm #
+########
+
+kubieHelmAsAdmin() {
+  KUBENS=$(cat $KUBIE_KUBECONFIG | yq '.contexts[0].context.namespace')
+  helm --kube-as-user $KUBENS-admin $(echo "$@")
+}
+alias helma='kubieHelmAsAdmin'
 
 # Show k8s node utilization
 alias kutil='kubectl get nodes --no-headers | awk '\''{print $1}'\'' | xargs -I {} sh -c '\''echo {} ; kubectl describe node {} | grep Allocated -A 5 | grep -ve Event -ve Allocated -ve percent -ve -- ; echo '\'''
