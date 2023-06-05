@@ -32,6 +32,8 @@ set incsearch             " Highlight search pattern as it is typed
 
 set number                " Show line numbers
 
+set rtp+=/opt/homebrew/opt/fzf
+
 " ------------------------------------------------------------
 " | Plugins                                                  |
 " ------------------------------------------------------------
