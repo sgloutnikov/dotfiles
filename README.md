@@ -1,5 +1,7 @@
 # Multi-platform Stowed Dotfiles
 
+// TODO: Add Makefile to init new machines or easier stow targets 
+
 ## Requirements
 
 Ensure the system has `git` and `stow` installed.
