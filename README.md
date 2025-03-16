@@ -1,6 +1,6 @@
 # Multi-platform Stowed Dotfiles
 
-Common across platforms stowed dotfiles. For specific platforms use _platform_ directories. Treat each stow package (tool) directory as `$HOME` path.
+Common across platforms stowed dotfiles. For specific platforms use `_platform_` directories. Treat each stow package (tool) directory as `$HOME` path.
 
 // TODO: Add Makefile or justfile to init new machines or one-off setup command.
 
