@@ -1,0 +1,11 @@
+[user]
+	name = "Stefan Gloutnikov"
+	email = "stefan@gloutnikov.com"
+[user]
+	signingkey = 9C6BE3253D6C3CDA
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+[gpg]
+	program = /opt/homebrew/bin/gpg

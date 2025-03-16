@@ -1,0 +1,112 @@
+[core]
+    editor = nvim
+    excludesfile = ~/.gitignore
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+    dark = true
+    true-color = always
+    side-by-side = true
+    features = woolly-mammoth
+
+##############
+# diff/merge #
+##############
+[diff]
+    tool = meld
+    colorMoved = default
+
+[difftool]
+    prompt = false
+
+[difftool "meld"]
+    trustExitCode = true
+    cmd = open -W -a Meld --args \"$LOCAL\" \"$PWD/$REMOTE\"
+
+[merge]
+    tool = meld
+    conflictstyle = diff3
+
+[mergetool]
+    prompt = false
+
+[mergetool "meld"]
+    trustExitCode = true
+    cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
+
+#########
+# Color #
+#########
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+
+[color "branch"]
+    current = green bold
+    local = green
+    remote = yellow
+
+[color "diff"]
+    frag = magenta
+    meta = yellow
+    new = green
+    old = red
+    newMoved = cyan
+    oldMoved = blue
+
+[color "status"]
+    added = green reverse
+    changed = yellow reverse
+    untracked = red reverse
+
+[alias]
+    # List Aliases
+    la = !git config -l | grep alias | cut -c 7-
+
+    yolo = push -f
+    # List Commits
+    ls = log --pretty=format:%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn] --decorate
+    # List Commits Showing Changed Files
+    ll = log --pretty=format:%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn] --decorate --numstat
+    # List One LIne Commits Showing Dates
+    lds = log --pretty=format:%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn] --decorate --date=short
+    # List One Line Commints Showing Relative Dates
+    ld = log --pretty=format:%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn] --decorate --date=relative
+    # Short Log
+    le = log --oneline --decorate
+    filelog = log -u
+    fl = log -u
+    # Show Modified Files Last Commit
+    dl = !git ll -1
+    # Diff Last Commit
+    dlc = diff --cached HEAD^
+
+    # Find a Filepath in Codebase
+    f = !git ls-files | grep -i
+    # Search for a String in Codebase
+    grep = grep -Ii
+    gr = grep -Ii
+    
+    # Pull Requests
+    pr  = "!f() { git fetch -fu ${2:-$(git remote |grep ^upstream || echo origin)} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
+    pr-clean = "!git for-each-ref refs/heads/pr/* --format='%(refname)' | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
+
+[pull]
+	ff = only
+
+[include]
+    path = ~/.config/git-delta/themes.gitconfig
+
+[include]
+    # Load local configs.
+    # https://git-scm.com/docs/git-config#_includes
+    #
+    # [!] The following needs to remain at the end of this file in
+    #     order to allow any of the above configs to be overwritten
+    #     by the local ones
+    path = ~/.gitconfig.local

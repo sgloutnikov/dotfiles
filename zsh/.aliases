@@ -1,0 +1,86 @@
+###########
+# Aliases #
+###########
+alias ll='ls -lah'
+# Muscle memory alias to use nvim
+alias vim='nvim'
+alias vi='nvim'
+
+# ripgrep (rg)
+# Find filenames
+alias rgf='rg --files | rg'
+
+# tmux
+alias t='tmux attach-session || tmux'
+
+# Find text in files (current path and down)
+alias grep-text='grep -rnw . -e $1'
+
+# Python
+alias python=python3
+alias pip=pip3
+
+# Delete .DS_Store files
+alias rm-ds_store='find . -name ".DS_Store" -delete'
+
+# Database
+alias pg-start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias pg-stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+alias mg-start='mongod --config /usr/local/etc/mongod.conf'
+alias influxdb-start='influxd -config /usr/local/etc/influxdb.conf'
+
+# CherryTree
+alias ct=cherrytree
+
+# Tailscale
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+
+##########
+# Docker #
+##########
+
+# Run a bash shell in the specified container.
+dkexsh() {
+  if [ $# -ne 1 ]; then
+    echo "Usage: $funcstack[1] CONTAINER_ID"
+    return 1
+  fi
+  
+  if docker exec -it $1 /bin/bash; then :; else
+    echo "/bin/bash not available in container. Trying /bin/sh"
+    docker exec -it $1 /bin/sh
+  fi
+}
+alias dksh='dkexsh'
+alias dm='docker-machine'
+
+##############
+# Kubernetes #
+##############
+
+alias k='kubectl'
+alias kcgc='kubectl config get-contexts'
+alias kge='kubectl get events --sort-by='{.lastTimestamp}''
+# Impersonate -admin in Kubie namespace
+kubieKubectlAsAdmin() {
+  KUBENS=$(cat $KUBIE_KUBECONFIG | yq '.contexts[0].context.namespace')
+  kubectl --as $KUBENS-admin $(echo "$@")
+}
+alias ka='kubieKubectlAsAdmin'
+
+########
+# Helm #
+########
+
+kubieHelmAsAdmin() {
+  KUBENS=$(cat $KUBIE_KUBECONFIG | yq '.contexts[0].context.namespace')
+  helm --kube-as-user $KUBENS-admin $(echo "$@")
+}
+alias helma='kubieHelmAsAdmin'
+
+# Show k8s node utilization
+alias kutil='kubectl get nodes --no-headers | awk '\''{print $1}'\'' | xargs -I {} sh -c '\''echo {} ; kubectl describe node {} | grep Allocated -A 5 | grep -ve Event -ve Allocated -ve percent -ve -- ; echo '\'''
+
+# yt-dlp
+alias yt-dlp-video='yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" $1'
+
