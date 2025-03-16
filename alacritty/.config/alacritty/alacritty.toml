@@ -1,0 +1,24 @@
+[general]
+import = [
+    "~/.config/alacritty/solarized_osaka-mod.toml",
+    "~/.config/alacritty/keybindings.toml"
+]
+
+[window]
+dimensions = { columns = 120, lines = 32 }
+padding = { x = 1, y = 1 }
+option_as_alt = "Both"
+
+[font]
+normal = { family = "Monaco Nerd Font Mono", style = "Regular" }
+size = 12
+offset = { x = 0, y = 1 }
+
+[env]
+TERM = "xterm-256color"
+
+[bell]
+command = { program = "osascript", args = ["-e", "beep"] }
+
+[selection]
+save_to_clipboard = true
