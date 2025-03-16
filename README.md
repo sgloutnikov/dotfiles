@@ -10,6 +10,8 @@ Ensure the system has `git` and `stow` installed.
 
 ## Usage
 
+Clone repo: `git clone git@github.com:sgloutnikov/dotfiles.git ~/.stowfiles`
+
 Stowing common platform files:
 
 `stow -v --target $HOME <normal-package>`
