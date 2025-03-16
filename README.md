@@ -13,6 +13,7 @@ Ensure the system has `git` and `stow` installed.
 Stowing common platform files:
 
 `stow -v --target $HOME <normal-package>`
+
 `stow -v --no-folding --target $HOME tmux`
 
 ### Stowing dot-named files
