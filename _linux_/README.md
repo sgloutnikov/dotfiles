@@ -1,3 +1,3 @@
 # Linux Specific Stowed Dotfiles
 
-Maintain `$HOME` structure for each stow package and follow stow commands like common platform files. 
+Maintain `$HOME` structure from this directory and follow stow commands like common platform stow packages. 
