@@ -84,42 +84,32 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+export LANG=en_US.UTF-8
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
+
 # Env variables can be shared between shells.
 source "$HOME/.env"
-
 # My custom aliases
 source "$HOME/.aliases"
 
-# export MANPATH="/usr/local/man:$MANPATH"
+# Apply platform specific files
+UNAME=$(uname -s | tr '[:upper:]' '[:lower:]')
+case "$UNAME" in
+    darwin*)
+        source "$HOME/.zshrc-darwin"
+        source "$HOME/.env-darwin"
+        source "$HOME/.aliases-darwin"
+        ;;
+    linux*)
+        ;;
+esac
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Original OSX Colors
-unset LSCOLORS
-export CLICOLOR=1
-export CLICOLOR_FORCE=1
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-

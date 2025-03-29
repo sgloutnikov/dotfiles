@@ -33,9 +33,6 @@ alias influxdb-start='influxd -config /usr/local/etc/influxdb.conf'
 # CherryTree
 alias ct=cherrytree
 
-# Tailscale
-alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
-
 ##########
 # Docker #
 ##########
