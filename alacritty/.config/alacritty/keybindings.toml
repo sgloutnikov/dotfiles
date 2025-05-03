@@ -1,4 +1,8 @@
 [keyboard]
 bindings = [
+    { key = "1", mods = "Option", action = "SelectTab1" },
+    { key = "2", mods = "Option", action = "SelectTab2" },
+    { key = "3", mods = "Option", action = "SelectTab3" },
+    { key = "4", mods = "Option", action = "SelectTab4" },
+    { key = "5", mods = "Option", action = "SelectTab5" },
 ]
-
