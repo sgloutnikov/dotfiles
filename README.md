@@ -32,12 +32,12 @@ Treat `__directory__` as `/directory`.
 
  ```bash
  cd _linux_/__etc__
- `sudo stow -v --no-folding --target /etc <package>`
+ sudo stow -v --no-folding --target /etc <package>
  ```
 
-## Stow Only File Not Parent Directory
+## Stow Only Files Not Parent Directory
 
-Add `--no-folding` to link a file inside a directory here without linking the entire directory. Ex: Stow only .gpg-agent.conf from .gnupg and don't link entire .gnupg to here. Another example is tmux, to only stow config without downloaded plugins.
+Add `--no-folding` to link a file inside a package here without linking the entire directory. Ex: Stow only .gpg-agent.conf from .gnupg and don't link entire .gnupg to here. Another example is tmux, to only stow config without downloaded plugins.
 
 ## Stowing dot-named files
 
