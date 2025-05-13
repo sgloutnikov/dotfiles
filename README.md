@@ -8,7 +8,7 @@ Common and specific platform stowed dotfiles.
 
 * Repository Root -- Common platform `$HOME` files.
 * `_platform_` -- Specific platform `$HOME` files.
-* `--directory--` -- Common or specifice platform `/directory` files.
+* `__directory__` -- Common or specifice platform `/directory` files.
 
 ## Requirements
 
@@ -28,11 +28,11 @@ Treat root of repository or `_platform_` as `$HOME`.
 
 ### Non-$HOME files:
 
-Treat `--directory--` as `/directory`. 
+Treat `__directory__` as `/directory`. 
 
  ```bash
- cd _linux_/--etc--
- `stow -v --target /etc <package>`
+ cd _linux_/__etc__
+ `sudo stow -v --no-folding --target /etc <package>`
  ```
 
 ## Stow Only File Not Parent Directory
