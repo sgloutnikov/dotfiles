@@ -1,0 +1,4 @@
+# MacOS Specific Configurations
+
+[bell]
+command = { program = "osascript", args = ["-e", "beep"] }

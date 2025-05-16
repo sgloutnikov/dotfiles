@@ -1,7 +1,8 @@
 [general]
 import = [
     "~/.config/alacritty/solarized_osaka-mod.toml",
-    "~/.config/alacritty/keybindings.toml"
+    "~/.config/alacritty/keybindings.toml",
+    "~/.config/alacritty/platform-specific.toml"
 ]
 
 [window]
@@ -21,9 +22,6 @@ offset = { x = 0, y = 2 }
 
 [env]
 TERM = "xterm-256color"
-
-[bell]
-command = { program = "osascript", args = ["-e", "beep"] }
 
 [selection]
 save_to_clipboard = true
