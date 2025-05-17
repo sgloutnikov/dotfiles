@@ -6,7 +6,7 @@ Common and specific platform stowed dotfiles.
 
 ## Naming Methodology
 
-* Repository Root -- Common platform `$HOME` files.
+* Repository Root -- Common platform `$HOME` files. 
 * `_platform_` -- Specific platform `$HOME` files.
 * `__directory__` -- Common or specifice platform `/directory` files.
 
@@ -20,24 +20,24 @@ Clone repo: `git clone git@github.com:sgloutnikov/dotfiles.git ~/.stowfiles`
 
 ### $HOME files:
 
-Treat root of repository or `_platform_` as `$HOME`.
+Treat root of repository or `_platform_` as `$HOME` (`--target` path). Add `<stow-package>` folders maintaining `$HOME` as parent structure inside.
 
-`stow -v --target $HOME <package>`
+`stow -v --target $HOME <stow-package>`
 
 `stow -v --no-folding --target $HOME tmux`
 
 ### Non-$HOME files:
 
-Treat `__directory__` as `/directory`. 
+Treat `__directory__` as `/directory` (`--target` path). Add `<stow-package>` folders maintaining `/directory` as parent structure inside.
 
  ```bash
  cd _linux_/__etc__
- sudo stow -v --no-folding --target /etc <package>
+ sudo stow -v --no-folding --target /etc <stow-package>
  ```
 
 ## Stow Only Files Not Parent Directory
 
-Add `--no-folding` to link a file inside a package here without linking the entire directory. Ex: Stow only .gpg-agent.conf from .gnupg and don't link entire .gnupg to here. Another example is tmux, to only stow config without downloaded plugins.
+Add `--no-folding` to link a file(s) inside a stow package without linking the entire directory. Ex: Stow only .gpg-agent.conf from .gnupg and don't link entire .gnupg to here. Another example is tmux, to only stow config without downloaded plugins. Useful for tools that produce additional artifacts which do not need to be saved in this repository.
 
 ## Stowing dot-named files
 
