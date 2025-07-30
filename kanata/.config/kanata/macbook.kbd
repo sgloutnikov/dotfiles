@@ -1,0 +1,51 @@
+;; Macbook keyboard configuration
+
+(defcfg
+  process-unmapped-keys yes
+)
+
+(defsrc
+  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12
+  grv
+  caps a s d f j k l ;
+  fn
+)
+
+(defvar
+  ;; Note: consider using different time values for your different fingers.
+  ;; For example, your pinkies might be slower to release keys and index fingers faster.
+  tap-time 200
+  hold-time 200
+  hold-time-slow 300
+  chord-time 60
+)
+
+(defalias
+  escctrl (tap-hold $tap-time $hold-time esc lctl)
+  a (tap-hold $tap-time $hold-time a lmet)
+  s (tap-hold $tap-time $hold-time s lalt)
+  d (tap-hold $tap-time $hold-time d lsft)
+  f (tap-hold $tap-time $hold-time f lctl)
+  j (tap-hold $tap-time $hold-time j rctl)
+  k (tap-hold $tap-time $hold-time k rsft)
+  l (tap-hold $tap-time $hold-time l ralt)
+  ; (tap-hold $tap-time $hold-time ; rmet)
+  fnl (tap-hold $tap-time $hold-time fn (layer-toggle fn))
+  mc C-up ;; Mission Control
+  sls M-spc ;; Spotlight Search
+)
+
+(deflayer qwerty
+  🔅  🔆  @mc   @sls    _    _   ◀◀  ▶⏸  ▶▶  🔇   🔈−  🔈+
+  _
+  @escctrl @a @s @d @f @j @k @l @;
+  @fnl
+)
+
+;; F-keys and kanata config reload
+(deflayer fn
+  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12
+  lrld
+  @escctrl _ _ _ _ _ _ _ _ 
+  fn
+)
