@@ -8,7 +8,7 @@
   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12
   grv
   caps a s d f j k l ;
-  fn
+  fn lmet rmet
 )
 
 (defvar
@@ -17,7 +17,7 @@
   tap-time 200
   hold-time 200
   hold-time-slow 300
-  chord-time 60
+  chord-time 75
 )
 
 (defalias
@@ -35,13 +35,21 @@
   fnl (tap-hold $tap-time $hold-time fn (layer-toggle fn))
   mc C-up ;; Mission Control
   sls M-spc ;; Spotlight Search
+  lmet (chord leaderkey lmet)
+  rmet (chord leaderkey rmet)
+)
+
+(defchords leaderkey $chord-time
+  (lmet     ) lmet
+  (     rmet) rmet
+  (lmet rmet) f13
 )
 
 (deflayer qwerty
   🔅  🔆  @mc   @sls    _    _   ◀◀  ▶⏸  ▶▶  🔇   🔈−  🔈+
   _
   @escctrl @a @s @d @f @j @k @l @;
-  @fnl
+  @fnl @lmet @rmet
 )
 
 ;; F-keys and kanata config reload
@@ -49,5 +57,5 @@
   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12
   lrld
   @escctrl _ _ _ _ _ _ _ _ 
-  fn
+  fn XX XX
 )
