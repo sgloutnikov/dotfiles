@@ -22,6 +22,8 @@
 
 (defalias
   escctrl (tap-hold $tap-time $hold-time esc lctl)
+  ;; TODO: Verify if current GASC sufficient on MacOS, maybe try CAGS
+  ;; https://precondition.github.io/home-row-mods
   a (tap-hold $tap-time $hold-time a lmet)
   s (tap-hold $tap-time $hold-time s lalt)
   d (tap-hold $tap-time $hold-time d lsft)
