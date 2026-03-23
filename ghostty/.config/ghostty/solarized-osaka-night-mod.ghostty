@@ -1,6 +1,7 @@
 # Solarized Osaka Night Mod Colors
 background = 001a1d
 foreground = 839496
+
 # Normal colors
 palette = 0=#073642
 palette = 1=#dc322f
@@ -10,6 +11,7 @@ palette = 4=#268bd2
 palette = 5=#d33682
 palette = 6=#2aa198
 palette = 7=#eee8d5
+
 # Bright colors
 palette = 8=#4c4c4c
 palette = 9=#cb4b16
