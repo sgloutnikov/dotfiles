@@ -18,7 +18,6 @@ term = xterm-256color
 copy-on-select = clipboard
 
 # macOS behavior
-macos-option-as-alt = true
 macos-titlebar-style = native
 
 bell-features = system
