@@ -92,6 +92,16 @@
     grep = grep -Ii
     gr = grep -Ii
 
+    # Who build this
+    who = !git shortlog -sn --no-merges
+    # What changes the most
+    churn = !git log --format='' --name-only --diff-filter=AM --since='1 year ago' | sort | uniq -c | sort -nr | head -20
+    # Monthly commit count
+    monthly = !git log --since='3 year ago' --format='%ad' --date=format:'%Y-%m' | sort | uniq -c
+    dmg = log --oneline -i -E --grep='(incident|outage|downtime|rollback|revert|mitigate|mitigation|hotfix|broke|prod)' --since='1 year ago'
+    bugs = log --oneline -i -E --grep='(bug|bugfix|fix|fixed|fixes|defect|regression|hotfix|broke)' --since='1 year ago'
+    bugfiles = !git log --name-only --format='' -i -E --grep='(bug|bugfix|fix|fixed|fixes|defect|regression|hotfix|broke)' --since='1 year ago' | sort | uniq -c | sort -nr
+
     # Difftastic aliases, so `git dlog -p` is `git log -p`
     # with difftastic and likewise for the other subcommands.
     dlog = -c diff.external=difft log --ext-diff
