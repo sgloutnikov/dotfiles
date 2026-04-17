@@ -109,6 +109,3 @@ case "$UNAME" in
         ;;
 esac
 
-
-# Created by `pipx` on 2026-04-13 09:36:40
-export PATH="$PATH:/Users/sgloutnikov/.local/bin"
