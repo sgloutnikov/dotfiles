@@ -1,11 +1,14 @@
+[includeIf "gitdir:~/workspace/yantra-git/*"]
+    path = ~/.gitconfig-yantra-git
+
 [user]
-	name = "Stefan Gloutnikov"
-	email = "stefan@gloutnikov.com"
+    name = "Stefan Gloutnikov"
+    email = "stefan@gloutnikov.com"
 [user]
-	signingkey = 9C6BE3253D6C3CDA
+    signingkey = 9C6BE3253D6C3CDA
 [commit]
-	gpgsign = true
+    gpgsign = true
 [tag]
-	gpgsign = true
+    gpgsign = true
 [gpg]
-	program = /opt/homebrew/bin/gpg
+    program = /opt/homebrew/bin/gpg
