@@ -122,4 +122,4 @@ alias kutil='kubectl get nodes --no-headers | awk '\''{print $1}'\'' | xargs -I 
 
 # yt-dlp
 yt-dlp-video() { yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" "$1"; }
-
+yt-dlp-audio() { yt-dlp --cookies-from-browser firefox --extract-audio -f bestaudio --audio-format mp3 --audio-quality 0 "$1" }
